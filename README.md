@@ -26,8 +26,8 @@ A powerful AI-powered conversation analyzer that transcribes audio files, identi
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/conversation-analyzer.git
-   cd conversation-analyzer
+   git clone https://github.com/Rohan452004/Speaker-Diarization
+   cd Speaker-Diarization
    ```
 
 2. **Install required dependencies:**
