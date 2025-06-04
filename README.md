@@ -2,7 +2,8 @@
 
 A powerful AI-powered conversation analyzer that transcribes audio files, identifies speakers, generates summaries, and enables Q&A about the conversation content.
 
-![Conversation Analyzer Demo](https://via.placeholder.com/800x400/007bff/ffffff?text=Conversation+Analyzer+Interface)
+<img width="1440" alt="Screenshot 2025-06-04 at 2 01 43 PM" src="https://github.com/user-attachments/assets/4bce1889-441e-4ae8-be29-581fe114b295" />
+
 
 ## Features ✨
 
@@ -15,14 +16,11 @@ A powerful AI-powered conversation analyzer that transcribes audio files, identi
 
 ## Screenshots 📸
 
-### Main Interface
-![Main Upload Interface](https://via.placeholder.com/600x300/1f1f1f/ffffff?text=Upload+Audio+Interface)
+<img width="1359" alt="Screenshot 2025-06-04 at 2 04 48 PM" src="https://github.com/user-attachments/assets/f138d180-6c40-4dcd-95e6-9fedaa216481" />
 
-### Transcript View
-![Transcript Display](https://via.placeholder.com/600x300/f8f9fa/000000?text=Transcript+with+Speaker+Labels)
+<img width="1387" alt="Screenshot 2025-06-04 at 2 05 03 PM" src="https://github.com/user-attachments/assets/39eeb8e5-ff27-43e4-9a20-29e04f733e2c" />
 
-### Analysis Dashboard
-![Analysis Features](https://via.placeholder.com/600x300/007bff/ffffff?text=Summary+and+QA+Features)
+
 
 ## Installation 🚀
 
