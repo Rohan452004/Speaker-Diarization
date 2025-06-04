@@ -5,17 +5,73 @@ import json
 import os
 from dotenv import load_dotenv
 
-# Load environment variables
+# Load environment variables from .env file (for local development)
 load_dotenv()
 
-# === Get API Keys from Environment Variables ===
-ASSEMBLYAI_API_KEY = os.getenv("ASSEMBLYAI_API_KEY")
-WORQHAT_API_KEY = os.getenv("WORQHAT_API_KEY")
-
-# Validate API keys
-if not ASSEMBLYAI_API_KEY or not WORQHAT_API_KEY:
-    st.error("⚠️ API keys not found! Please check your .env file.")
+def get_api_keys():
+    """
+    Get API keys from various sources with fallback order:
+    1. Try Streamlit secrets first (for production/Streamlit Cloud)
+    2. Try environment variables (for local development with .env)
+    3. Show error if no keys found
+    """
+    
+    # Try Streamlit secrets first (for production deployment)
+    try:
+        assemblyai_key = st.secrets["api_keys"]["ASSEMBLYAI_API_KEY"]
+        worqhat_key = st.secrets["api_keys"]["WORQHAT_API_KEY"]
+        
+        # Validate keys are not empty
+        if assemblyai_key and worqhat_key:
+            return assemblyai_key, worqhat_key, "streamlit_secrets"
+    except (KeyError, FileNotFoundError, AttributeError):
+        pass
+    
+    # Try environment variables (for local development)
+    assemblyai_key = os.getenv("ASSEMBLYAI_API_KEY")
+    worqhat_key = os.getenv("WORQHAT_API_KEY")
+    
+    if assemblyai_key and worqhat_key:
+        return assemblyai_key, worqhat_key, "environment_variables"
+    
+    # If no keys found, show comprehensive error message
+    st.error("🚨 API keys not found!")
+    
+    st.markdown("""
+    ### Please configure your API keys using one of these methods:
+    
+    #### 🔧 For Local Development:
+    1. **Create a `.env` file** in your project root:
+    ```bash
+    ASSEMBLYAI_API_KEY=your_assemblyai_api_key_here
+    WORQHAT_API_KEY=your_worqhat_api_key_here
+    ```
+    
+    2. **Or set environment variables** in your terminal:
+    ```bash
+    export ASSEMBLYAI_API_KEY="your_assemblyai_api_key_here"
+    export WORQHAT_API_KEY="your_worqhat_api_key_here"
+    ```
+    
+    #### ☁️ For Streamlit Cloud (Production):
+    1. Go to your **Streamlit app settings**
+    2. Navigate to the **"Secrets"** section  
+    3. Add your keys in **TOML format**:
+    ```toml
+    [api_keys]
+    ASSEMBLYAI_API_KEY = "your_assemblyai_api_key_here"
+    WORQHAT_API_KEY = "your_worqhat_api_key_here"
+    ```
+    
+    #### 🔑 How to get API keys:
+    - **AssemblyAI**: Sign up at [assemblyai.com](https://www.assemblyai.com/)
+    - **WorqHat**: Sign up at [worqhat.com](https://worqhat.com/)
+    """)
+    
     st.stop()
+
+# Get API keys using the hybrid approach
+ASSEMBLYAI_API_KEY, WORQHAT_API_KEY, source = get_api_keys()
 
 
 # === Custom CSS for modern UI ===
