@@ -16,10 +16,13 @@ A powerful AI-powered conversation analyzer that transcribes audio files, identi
 
 ## Screenshots 📸
 
-<img width="1359" alt="Screenshot 2025-06-04 at 2 04 48 PM" src="https://github.com/user-attachments/assets/f138d180-6c40-4dcd-95e6-9fedaa216481" />
+![image](https://github.com/user-attachments/assets/2a8c671c-e133-4e8c-b57d-13e5779acedc)
 
-<img width="1387" alt="Screenshot 2025-06-04 at 2 05 03 PM" src="https://github.com/user-attachments/assets/39eeb8e5-ff27-43e4-9a20-29e04f733e2c" />
+![image](https://github.com/user-attachments/assets/eca35aed-9be5-48ff-918d-d09b70c4cc0f)
 
+![image](https://github.com/user-attachments/assets/bc948a98-0cc2-4309-b856-06158d8300cd)
+
+![image](https://github.com/user-attachments/assets/3fec8078-0028-476f-9f5c-a3528d735d83)
 
 
 ## Installation 🚀
